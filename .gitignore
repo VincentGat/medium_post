@@ -1,0 +1,6 @@
+\idea
+.\idea
+.idea
+__pycache__/
+test.txt
+\bayes_opt_logs
