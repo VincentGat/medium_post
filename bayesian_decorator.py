@@ -62,7 +62,8 @@ if __name__ == '__main__':
     }
 
 
-    @optimize_bayes_param(init_points=5, n_iter=10, pbounds=pbounds_forest, X=x, y=y, )
+    @optimize_bayes_param(init_points=10, n_iter=10, X=x, y=y
+        , pbounds=pbounds_forest, scoring='neg_log_loss', cv=10, log_dir='forest_bayes_trt', kappa=5)
     def forest_bayes(n_estimators, min_samples_split):
         return RandomForestClassifier(n_estimators=int(n_estimators), min_samples_split=int(min_samples_split),
                                       n_jobs=-1)
